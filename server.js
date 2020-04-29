@@ -10,8 +10,9 @@ var express = require('express');
 var low = require('lowdb')
 //var FileSync = require('lowdb/adapters/FileSync')
 //var adapter = new FileSync('.data/balderdashdb.json')
-//var db = low(adapter)
-var db = low('db.json')
+var adapter = new LocalStorage('db')
+var db = low(adapter)
+//var db = low('db.json')
 var app = express();
 
 // default answer list
