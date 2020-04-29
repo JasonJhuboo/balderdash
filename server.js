@@ -8,9 +8,10 @@ var express = require('express');
 // Security note: the database is saved to the file `db.json` on the local filesystem.
 // It's deliberately placed in the `.data` directory which doesn't get copied if someone remixes the project.
 var low = require('lowdb')
-var FileSync = require('lowdb/adapters/FileSync')
-var adapter = new FileSync('.data/balderdashdb.json')
-var db = low(adapter)
+//var FileSync = require('lowdb/adapters/FileSync')
+//var adapter = new FileSync('.data/balderdashdb.json')
+//var db = low(adapter)
+var db = low('db.json')
 var app = express();
 
 // default answer list
