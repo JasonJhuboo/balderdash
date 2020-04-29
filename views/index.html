@@ -1,0 +1,101 @@
+<!-- This is a static file -->
+<!-- served from your routes in server.js -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Balderdash question page</title>
+    <meta name="description" content="Lowdb Example" />
+    <link
+      id="favicon"
+      rel="icon"
+      href="https://glitch.com/favicon-app.ico"
+      type="image/x-icon"
+    />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>
+        Balderdash - Player 
+      </h1>
+    </header>
+
+    <button type="button" class="collapsible">Balderdash Rules</button>
+    <div class="content">
+      <h2>
+        How to play Balderdash:
+      </h2>
+      <ol>       
+        <li>You will be asked a question by the quiz master. Please don't answer the question until asked to do so by the quiz master.</li>
+        <li>At random someone (the 'dasher') will be given the correct answer. This person must acknowledge that they have the answer to the quiz master without letting anyone else know.</li>
+        <li>You can now answer the question. The person who has the correct answer must enter the correct answer (they can make it seem like a lie by embellishing, but must provide the correct answer), everyone else must make up a believable answer, or answer correctly if they want.</li>
+        <li>When everyone has answered, the quiz master will ask everyone in turn to pick the number of the answer that they believe is correct.</li>
+        <li>After everyone has answered, the quiz master will award points</li>
+        <ol>
+          <li>If someone chooses your answer and you are not the 'dasher', you get one point</li>
+          <li>If you get the correct answer, you get two points (unless you are the 'dasher')</li>
+          <li>The 'dasher' gets 3 points if no one chooses your answer</li>
+          <li>The 'dasher' gets 1 points if one person chooses your answer</li>
+        </ol>
+        <li>There are 10 questions, so not every person in the game may get to be the dasher.</li>
+        <li>The scores will be announced at the end of the </li>
+        <li>The game works better with a few drinks to hand!</li>    
+      </ol>
+      <br>
+      This website was thrown together in an evening... Please have a little patience with it!<br>
+      Here are some tips to make the game a bit more playable...
+      <ul>
+        <li>Please refresh your web page to get the question (when prompted to do so by the quiz master)</li>
+        <li>The page doesn't automatically refresh... when people are answering, you can refresh your page to see answers. Only the quiz master can see who has made a particular suggestion.</li>
+        <li>Please only submit one answer. If you get it wrong, just live with it. It helps to check what you are about to submit before you do so. This will just save tons of confusion.</li>
+        <li>If you have submitted an answer, and it doesn't appear after you refresh, let the quiz master know and then try to submit again.</li>
+        <li>Please don't constantly refresh... you might break the website!</li>
+      </ul>
+      
+    </div>
+
+    <br />
+
+    <h2>Question:</h2>
+    <section class="question">
+      <ul id="questionlist" />
+    </section>
+    
+    <main>
+      <h2>Answers:</h2>
+      <p>Enter your name and your answer</p>
+      <form>
+        <input id="name" type="text" maxlength="100" placeholder="Your name" />
+        <input
+          id="answer"
+          type="text"
+          maxlength="255"
+          placeholder="Your answer"
+        />
+        <button type="submit">Submit</button>
+      </form>
+      <br>
+      <section class="answers">
+        <ol id="answers" />
+      </section>
+    </main>
+
+    <script
+      src="https://button.glitch.me/button.js"
+      data-style="glitch"
+    ></script>
+    <div class="glitchButton" style="position:fixed;top:20px;right:20px;"></div>
+
+    <!-- Your web-app is https, so your scripts need to be too -->
+    <script
+      src="https://code.jquery.com/jquery-2.2.1.min.js"
+      integrity="sha256-gvQgAFzTH6trSrAWoH1iPo9Xc96QxSZ3feW6kem+O00="
+      crossorigin="anonymous"
+    ></script>
+    <script src="/balderdashclient.js"></script>
+  </body>
+</html>
