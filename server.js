@@ -29,10 +29,12 @@ app.get("/", function (request, response) {
 
 app.get("/answers", function (request, response) {
   var dbAnswers=[];
+    if (hideAnswers === false) {     
   var answers = db.get('answers').value() // Find all answers in the collection
   answers.forEach(function(answer) {
     dbAnswers.push([answer.answer]); // adds their info to the dbAnswers value
   });
+    }
   response.send(dbAnswers); // sends dbAnswers back to the page
 });
 
@@ -63,6 +65,15 @@ app.post("/answers", function (request, response) {
   response.sendStatus(200);
 });
 
+
+// shows answers
+app.get("/showanswers", function(request, response) {
+                                                                              //NEW
+  hideAnswers = false;
+  response.redirect("/admin.html");
+});
+
+
 // creates a new entry in the questions collection with the submitted values
 app.post("/questions", function (request, response) {
   db.get('questions')  .remove()  .write()
@@ -76,6 +87,7 @@ app.post("/questions", function (request, response) {
 
 // removes all entries from the collection
 app.get("/clear", function (request, response) {
+    hideAnswers = true;
   // removes all entries from the collection
   db.get('answers')
   .remove()
